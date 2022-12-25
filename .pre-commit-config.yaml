@@ -1,5 +1,5 @@
 repos:
-# Automate requiriments dependencies
+# Automate requirements dependencies
 -   repo: local
     hooks:
       - id: requirements

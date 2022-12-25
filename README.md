@@ -1,10 +1,10 @@
-# Python Boilerplate 🐍
+# Employee Management Service
 
 ## Technologies
 - Python
 - Flask
 - SQLAlchemy
-- PostgresSQL
+- SQLite
 - Docker
 
 ## Required Dependencies 
@@ -26,16 +26,12 @@
 _You need create **.env** file, use ``.env.example`` file for template_
 ```
 APPLICATION_PORT=3008
-
-DATABASE_HOST=localhost
-DATABASE_PORT=5432
-
-POSTGRES_USER=postgres_user
-POSTGRES_PASSWORD=postgres_password
-POSTGRES_DB=postgres_database
 ```
 
 ## Start Project
+cd database
+sqlite3 testDB.db
+Run the migration scripts inside database folder. 
 _Docker is configured to raise two containers, the flask application image and the postgres database. For more details see the **docker-compose.yml** configuration file_
 ```
 docker-compose up --build

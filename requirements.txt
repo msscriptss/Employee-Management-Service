@@ -27,3 +27,4 @@ toml==0.10.2
 virtualenv==20.14.1
 Werkzeug==2.1.2
 zipp==3.8.0
+Flask-RESTful==0.3.9
