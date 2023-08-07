@@ -15,7 +15,15 @@ class EmployeeRepository:
             EmployeeModel.query.filter_by(id=emp_id).delete()
             db.session.commit()
 
-    def get_stats(self):
+    def get_stats(self, filter_by, group_by):
         with DBConnection() as db:
             # TODO(): Implement it
-            pass
+            query = EmployeeModel.query
+            if len(filter_by) > 0:
+                query = query.filter_by(**filter_by)
+            if len(group_by) > 0:
+                query = query.filter_by(**group_by)
+            _max = EmployeeModel.get_max(query)
+            _min = EmployeeModel.get_min(query)
+            mean = EmployeeModel.get_mean(query)
+            return {"max": _max, "min": _min, "mean": mean}
